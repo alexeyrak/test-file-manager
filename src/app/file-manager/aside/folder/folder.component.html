@@ -1,0 +1,10 @@
+<div>
+  <a class="nav-link d-flex align-items-center" href="javascript:void(0)" (click)="toggle()">
+    <i class="material-icons" *ngIf="!isOpen">folder</i>
+    <i class="material-icons" *ngIf="isOpen">folder_open</i>
+    <span class="ml-1">{{folder.name}}</span>
+  </a>
+  <div class="sub-folder">
+    <app-folder *ngIf="isOpen" [folder]="folder.sub"></app-folder>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+.item .icon {
+  font-size: 50px;
+}

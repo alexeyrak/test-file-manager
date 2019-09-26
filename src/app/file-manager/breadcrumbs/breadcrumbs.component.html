@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" >
+      <a href="javascript:void(0)" *ngIf="(breadCrumbs | async)?.length" (click)="select()">Home</a>
+      <span *ngIf="!(breadCrumbs | async)?.length">Home</span>
+    </li>
+    <li class="breadcrumb-item" *ngFor="let folder of breadCrumbs | async; let last = last">
+      <a href="javascript:void(0)" *ngIf="!last" (click)="select(folder)">{{folder.name}}</a>
+      <span *ngIf="last">{{folder.name}}</span>
+    </li>
+  </ol>
+</nav>

@@ -1,0 +1,18 @@
+<div class="row" [class.list-mode]="currentMode === modes.list"
+                 [class.grid-mode]="currentMode === modes.grid">
+  <a class="item"
+     [class.col-sm-12]="currentMode === modes.list"
+     [class.col-sm-3]="currentMode === modes.grid"
+     href="javascript:void(0)" (click)="select(folder)"
+     *ngFor="let folder of (selected | async)?.folders">
+    <i class="material-icons icon">folder</i>
+    <span>{{folder.name}}</span>
+  </a>
+  <div class="item"
+       [class.col-sm-12]="currentMode === modes.list"
+       [class.col-sm-3]="currentMode === modes.grid"
+       *ngFor="let folder of (selected | async)?.files">
+    <i class="material-icons icon">insert_drive_file</i>
+    <span>{{folder.name}}</span>
+  </div>
+</div>

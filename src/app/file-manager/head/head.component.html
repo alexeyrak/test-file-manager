@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="navbar-nav ">
+    <li class="nav-item" [class.active]="currentMode === modes.list">
+      <a class="nav-link" href="javascript:void(0)" (click)="choose(modes.list)">
+        <i class="material-icons">view_list</i>
+      </a>
+    </li>
+    <li class="nav-item" [class.active]="currentMode === modes.grid">
+      <a class="nav-link" href="javascript:void(0)" (click)="choose(modes.grid)">
+        <i class="material-icons">view_module</i>
+      </a>
+    </li>
+  </ul>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="form-inline my-2 my-lg-0 ml-auto">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [formControl]="search">
+    </div>
+  </div>
+</nav>
