@@ -23,7 +23,7 @@ export class HeadComponent implements OnDestroy {
     this.searchSub = this.search.valueChanges.pipe(
       debounceTime(300),
       filter(Boolean)
-    ).subscribe((search) => this.fileManagerService.search(search));
+    ).subscribe((search: string) => this.fileManagerService.search(search));
   }
 
   ngOnDestroy() {
